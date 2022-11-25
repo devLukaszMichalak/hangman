@@ -12,7 +12,7 @@ export class PlaygroundComponent implements OnInit {
   @Input()
   category?: Categories;
 
-  currentHangmanPicture: number = 10;
+  currentHangmanPicture: number = 0;
   alphabet: string[] = [];
   phrase: string[] = ['t','e','s','t']
   phraseLettersGuessed: boolean[] = [false, false, false, false]
@@ -29,10 +29,19 @@ export class PlaygroundComponent implements OnInit {
   }
 
   letterPressed(letter: string) {
+    let didUserGuessCorrectly = false;
     this.phrase.forEach((phraseLetter, i) => {
       if(phraseLetter === letter.toLowerCase()){
         this.phraseLettersGuessed[i] = true;
+        didUserGuessCorrectly = true;
       }
     })
+    if(!didUserGuessCorrectly){
+      if(this.currentHangmanPicture < 11){
+        this.currentHangmanPicture++;
+      } else {
+        console.log('game over')
+      }
+    }
   }
 }
