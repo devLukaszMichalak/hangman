@@ -1,46 +1,48 @@
+<img [src]="getCurrentHangmanPicturePath()">
+{{category}}
 <div class="button-grid">
   <div class="button-row">
-    <button>A</button>
-    <button>Ą</button>
-    <button>B</button>
-    <button>C</button>
-    <button>Ć</button>
-    <button>D</button>
-    <button>E</button>
-    <button>Ę</button>
+    <button (click)="letterPressed('A')">A</button>
+    <button (click)="letterPressed('Ą')">Ą</button>
+    <button (click)="letterPressed('B')">B</button>
+    <button (click)="letterPressed('C')">C</button>
+    <button (click)="letterPressed('Ć')">Ć</button>
+    <button (click)="letterPressed('D')">D</button>
+    <button (click)="letterPressed('E')">E</button>
+    <button (click)="letterPressed('Ę')">Ę</button>
   </div>
 
   <div class="button-row">
-    <button>F</button>
-    <button>G</button>
-    <button>H</button>
-    <button>I</button>
-    <button>J</button>
-    <button>K</button>
-    <button>L</button>
-    <button>Ł</button>
+    <button (click)="letterPressed('F')">F</button>
+    <button (click)="letterPressed('G')">G</button>
+    <button (click)="letterPressed('H')">H</button>
+    <button (click)="letterPressed('I')">I</button>
+    <button (click)="letterPressed('J')">J</button>
+    <button (click)="letterPressed('K')">K</button>
+    <button (click)="letterPressed('L')">L</button>
+    <button (click)="letterPressed('Ł')">Ł</button>
   </div>
 
   <div class="button-row">
-    <button>M</button>
-    <button>N</button>
-    <button>Ń</button>
-    <button>O</button>
-    <button>Ó</button>
-    <button>P</button>
-    <button>R</button>
-    <button>S</button>
+    <button (click)="letterPressed('M')">M</button>
+    <button (click)="letterPressed('N')">N</button>
+    <button (click)="letterPressed('Ń')">Ń</button>
+    <button (click)="letterPressed('O')">O</button>
+    <button (click)="letterPressed('Ó')">Ó</button>
+    <button (click)="letterPressed('P')">P</button>
+    <button (click)="letterPressed('R')">R</button>
+    <button (click)="letterPressed('S')">S</button>
   </div>
 
   <div class="button-row">
-    <button>Ś</button>
-    <button>T</button>
-    <button>U</button>
-    <button>W</button>
-    <button>Y</button>
-    <button>Z</button>
-    <button>Ź</button>
-    <button>Ż</button>
+    <button (click)="letterPressed('Ś')">Ś</button>
+    <button (click)="letterPressed('T')">T</button>
+    <button (click)="letterPressed('U')">U</button>
+    <button (click)="letterPressed('W')">W</button>
+    <button (click)="letterPressed('Y')">Y</button>
+    <button (click)="letterPressed('Z')">Z</button>
+    <button (click)="letterPressed('Ź')">Ź</button>
+    <button (click)="letterPressed('Ż')">Ż</button>
   </div>
 
 </div>

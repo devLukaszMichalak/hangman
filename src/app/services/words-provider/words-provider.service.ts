@@ -41,7 +41,7 @@ export class WordsProviderService {
     'szpinak',
     'pomidor',
     'rzepa',
-    'cukinia']
+    'cukinia'];
 
   private readonly fruits = ['agrest',
     'ananas',
@@ -78,7 +78,7 @@ export class WordsProviderService {
     'truskawka',
     'winogrono',
     'wiśnia',
-    'żurawina']
+    'żurawina'];
 
   private readonly animals = [
     'aligator',
@@ -177,9 +177,12 @@ export class WordsProviderService {
     'mors',
     'wilk',
     'dzięcioł',
-    'zebra']
+    'zebra'];
+
+  private readonly alphabet = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'R', 'S', 'Ś', 'T', 'U', 'W', 'Y', 'Z', 'Ź', 'Ż'];
 
   getVegetables = (): string[] => this.vegetables;
   getFruits = (): string[] => this.fruits;
   getAnimals = (): string[] => this.animals;
+  getAlphabet = (): string[] => this.alphabet;
 }

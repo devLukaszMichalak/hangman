@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PlaygroundComponent } from './components/playground/playground.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -11,9 +12,10 @@ import { PlaygroundComponent } from './components/playground/playground.componen
     DashboardComponent,
     PlaygroundComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

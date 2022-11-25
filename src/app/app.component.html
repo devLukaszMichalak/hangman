@@ -1,2 +1,2 @@
-<app-dashboard></app-dashboard>
-<app-playground></app-playground>
+<app-dashboard (pickedCategory)="categoryCollector($event)" *ngIf="category === undefined"></app-dashboard>
+<app-playground [category]="category" *ngIf="category !== undefined"></app-playground>

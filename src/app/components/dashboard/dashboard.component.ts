@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Categories} from "../../services/enums/categories";
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  @Output()
+  pickedCategory: EventEmitter<Categories> = new EventEmitter();
+
+  readonly CATEGORIES: Categories[] = [Categories.ANIMALS, Categories.FRUITS, Categories.VEGETABLES]
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  pickCategory(category: Categories) {
+    this.pickedCategory.emit(category);
+  }
 }

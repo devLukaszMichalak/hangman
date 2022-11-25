@@ -1,1 +1,7 @@
-<p>test commit signing</p>
+<div class="dashboard-container">
+  <div class="title-text">Wybierz kategorię:</div>
+  <div class="category-btn-container">
+    <button *ngFor="let category of CATEGORIES" (click)="pickCategory(category)">{{category}}</button>
+  </div>
+</div>
+
