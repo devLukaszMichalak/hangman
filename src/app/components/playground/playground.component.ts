@@ -14,6 +14,8 @@ export class PlaygroundComponent implements OnInit {
 
   currentHangmanPicture: number = 10;
   alphabet: string[] = [];
+  phrase: string[] = ['t','e','s','t']
+  phraseLettersGuessed: boolean[] = [false, false, false, false]
 
   constructor(private provider: WordsProviderService) {
   }
@@ -27,6 +29,10 @@ export class PlaygroundComponent implements OnInit {
   }
 
   letterPressed(letter: string) {
-    console.log(letter);
+    this.phrase.forEach((phraseLetter, i) => {
+      if(phraseLetter === letter.toLowerCase()){
+        this.phraseLettersGuessed[i] = true;
+      }
+    })
   }
 }

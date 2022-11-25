@@ -1,5 +1,13 @@
-<img [src]="getCurrentHangmanPicturePath()">
-{{category}}
+<div class="top-container">
+  <div>{{category}}</div>
+  <div><img [src]="getCurrentHangmanPicturePath()"></div>
+  <div class="hide">{{category}}</div>
+</div>
+
+<div class="phrase-container">
+  <div *ngFor="let letter of phrase, let i = index">{{phraseLettersGuessed[i] ? letter : '_'}}</div>
+</div>
+
 <div class="button-grid">
   <div class="button-row">
     <button (click)="letterPressed('A')">A</button>
