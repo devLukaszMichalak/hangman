@@ -70,8 +70,11 @@ export class PlaygroundComponent implements OnInit {
   }
 
   private getCurrentWordIndex(): number {
-    const index = Math.floor(this.wordList.length * Math.random());
+    const index = Math.round(this.wordList.length * Math.random());
     if (this.alreadyUsedIndexes.includes(index)) {
+      if (this.alreadyUsedIndexes.length === this.wordList.length) {
+        this.alreadyUsedIndexes = [];
+      }
       return this.getCurrentWordIndex();
     } else {
       return index;
