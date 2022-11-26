@@ -57,9 +57,8 @@ export class PlaygroundComponent implements OnInit {
       }
     })
     if (!didUserGuessCorrectly) {
-      if (this.currentHangmanPicture < this.LAST_IMAGE_INDEX) {
-        this.currentHangmanPicture++;
-      } else {
+      this.currentHangmanPicture++;
+      if (this.currentHangmanPicture === this.LAST_IMAGE_INDEX) {
         this.phraseLettersGuessed = Array(this.phrase.length).fill(true);
         this.defeat = true;
       }
