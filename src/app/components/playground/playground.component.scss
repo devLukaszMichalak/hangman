@@ -35,7 +35,8 @@ img {
 }
 
 button{
-  padding: 28px 18px;
+  color: black;
+  padding: 26px 16px;
   outline: none;
   background-color: #641ae6;
   border: none;
@@ -50,6 +51,7 @@ button{
     transform: translateY(4px);
   }
   &:disabled{
+    color: white;
     pointer-events: none;
     background-color: #1e262c;
   }
