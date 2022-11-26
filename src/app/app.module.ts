@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PlaygroundComponent } from './components/playground/playground.component';
 import {FormsModule} from "@angular/forms";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,11 @@ import {FormsModule} from "@angular/forms";
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          registrationStrategy: 'registerImmediately'
+        })
     ],
   providers: [],
   bootstrap: [AppComponent]
