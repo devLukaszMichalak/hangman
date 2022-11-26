@@ -1,55 +1,61 @@
 <div class="top-container">
-  <div>{{category}}</div>
-  <div><img [src]="getCurrentHangmanPicturePath()"></div>
+  <div class="title-text">{{category}}</div>
+  <div>
+    <img [src]="getCurrentHangmanPicturePath()">
+  </div>
 </div>
 
 <div class="phrase-container">
   <div *ngFor="let letter of phrase, let i = index">{{phraseLettersGuessed[i] ? letter : '_'}}</div>
 </div>
 
-<div class="button-grid">
+<div class="button-grid" *ngIf="!phraseLettersGuessed.includes(false)">
+  <button class="next-button" (click)="resetGame()"> Następne słowo</button>
+</div>
+
+<div class="button-grid" *ngIf="phraseLettersGuessed.includes(false)">
   <div class="button-row">
-    <button (click)="letterPressed('A')">A</button>
-    <button (click)="letterPressed('Ą')">Ą</button>
-    <button (click)="letterPressed('B')">B</button>
-    <button (click)="letterPressed('C')">C</button>
-    <button (click)="letterPressed('Ć')">Ć</button>
-    <button (click)="letterPressed('D')">D</button>
-    <button (click)="letterPressed('E')">E</button>
-    <button (click)="letterPressed('Ę')">Ę</button>
+    <button id="A" (click)="letterPressed('A')">A</button>
+    <button id="Ą" (click)="letterPressed('Ą')">Ą</button>
+    <button id="B" (click)="letterPressed('B')">B</button>
+    <button id="C" (click)="letterPressed('C')">C</button>
+    <button id="Ć" (click)="letterPressed('Ć')">Ć</button>
+    <button id="D" (click)="letterPressed('D')">D</button>
+    <button id="E" (click)="letterPressed('E')">E</button>
+    <button id="Ę" (click)="letterPressed('Ę')">Ę</button>
   </div>
 
   <div class="button-row">
-    <button (click)="letterPressed('F')">F</button>
-    <button (click)="letterPressed('G')">G</button>
-    <button (click)="letterPressed('H')">H</button>
-    <button (click)="letterPressed('I')">I</button>
-    <button (click)="letterPressed('J')">J</button>
-    <button (click)="letterPressed('K')">K</button>
-    <button (click)="letterPressed('L')">L</button>
-    <button (click)="letterPressed('Ł')">Ł</button>
+    <button id="F" (click)="letterPressed('F')">F</button>
+    <button id="G" (click)="letterPressed('G')">G</button>
+    <button id="H" (click)="letterPressed('H')">H</button>
+    <button id="I" (click)="letterPressed('I')">I</button>
+    <button id="J" (click)="letterPressed('J')">J</button>
+    <button id="K" (click)="letterPressed('K')">K</button>
+    <button id="L" (click)="letterPressed('L')">L</button>
+    <button id="Ł" (click)="letterPressed('Ł')">Ł</button>
   </div>
 
   <div class="button-row">
-    <button (click)="letterPressed('M')">M</button>
-    <button (click)="letterPressed('N')">N</button>
-    <button (click)="letterPressed('Ń')">Ń</button>
-    <button (click)="letterPressed('O')">O</button>
-    <button (click)="letterPressed('Ó')">Ó</button>
-    <button (click)="letterPressed('P')">P</button>
-    <button (click)="letterPressed('R')">R</button>
-    <button (click)="letterPressed('S')">S</button>
+    <button id="M" (click)="letterPressed('M')">M</button>
+    <button id="N" (click)="letterPressed('N')">N</button>
+    <button id="Ń" (click)="letterPressed('Ń')">Ń</button>
+    <button id="O" (click)="letterPressed('O')">O</button>
+    <button id="Ó" (click)="letterPressed('Ó')">Ó</button>
+    <button id="P" (click)="letterPressed('P')">P</button>
+    <button id="R" (click)="letterPressed('R')">R</button>
+    <button id="S" (click)="letterPressed('S')">S</button>
   </div>
 
   <div class="button-row">
-    <button (click)="letterPressed('Ś')">Ś</button>
-    <button (click)="letterPressed('T')">T</button>
-    <button (click)="letterPressed('U')">U</button>
-    <button (click)="letterPressed('W')">W</button>
-    <button (click)="letterPressed('Y')">Y</button>
-    <button (click)="letterPressed('Z')">Z</button>
-    <button (click)="letterPressed('Ź')">Ź</button>
-    <button (click)="letterPressed('Ż')">Ż</button>
+    <button id="Ś" (click)="letterPressed('Ś')">Ś</button>
+    <button id="T" (click)="letterPressed('T')">T</button>
+    <button id="U" (click)="letterPressed('U')">U</button>
+    <button id="W" (click)="letterPressed('W')">W</button>
+    <button id="Y" (click)="letterPressed('Y')">Y</button>
+    <button id="Z" (click)="letterPressed('Z')">Z</button>
+    <button id="Ź" (click)="letterPressed('Ź')">Ź</button>
+    <button id="Ż" (click)="letterPressed('Ż')">Ż</button>
   </div>
 
 </div>

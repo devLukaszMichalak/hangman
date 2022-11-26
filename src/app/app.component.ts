@@ -11,7 +11,6 @@ export class AppComponent {
   category?: Categories;
 
   categoryCollector(category: Categories) {
-    console.log(category)
     this.category = category;
   }
 }
