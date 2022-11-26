@@ -9,11 +9,23 @@
   <div *ngFor="let letter of phrase, let i = index">{{phraseLettersGuessed[i] ? letter : '_'}}</div>
 </div>
 
-<div class="button-grid" *ngIf="!phraseLettersGuessed.includes(false)">
-  <button class="next-button" (click)="resetGame()"> Następne słowo</button>
+<div class="button-grid" *ngIf="!defeat && !phraseLettersGuessed.includes(false)">
+  <button class="next-button" (click)="prepareGame()">
+    <div>Wygrana</div>
+    <br>
+    <div>Następne słowo</div>
+  </button>
 </div>
 
-<div class="button-grid" *ngIf="phraseLettersGuessed.includes(false)">
+<div class="button-grid" *ngIf="defeat">
+  <button class="next-button" (click)="prepareGame()">
+    <div>Przegrana</div>
+    <br>
+    <div>Następne słowo</div>
+  </button>
+</div>
+
+<div class="button-grid" *ngIf="!defeat && phraseLettersGuessed.includes(false)">
   <div class="button-row">
     <button id="A" (click)="letterPressed('A')">A</button>
     <button id="Ą" (click)="letterPressed('Ą')">Ą</button>

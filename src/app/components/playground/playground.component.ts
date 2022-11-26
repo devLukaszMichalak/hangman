@@ -18,8 +18,8 @@ export class PlaygroundComponent implements OnInit {
   currentHangmanPicture: number = 0;
   alphabet: string[] = [];
   phrase: string[] = ['t', 'e', 's', 't']
+  defeat: boolean = false;
   phraseLettersGuessed: boolean[] = [false, false, false, false]
-
 
   private readonly LAST_IMAGE_INDEX: number = 11;
 
@@ -39,11 +39,7 @@ export class PlaygroundComponent implements OnInit {
         this.wordList = this.provider.getVegetables();
         break;
     }
-    this.currentWordIndex = this.getCurrentWordIndex();
-    this.alreadyUsedIndexes.push(this.currentWordIndex);
-
-    this.phrase = this.stringToCharArr(this.wordList[this.currentWordIndex]);
-    this.phraseLettersGuessed = Array(this.phrase.length).fill(false);
+    this.prepareGame();
   }
 
   getCurrentHangmanPicturePath() {
@@ -64,7 +60,8 @@ export class PlaygroundComponent implements OnInit {
       if (this.currentHangmanPicture < this.LAST_IMAGE_INDEX) {
         this.currentHangmanPicture++;
       } else {
-        console.log('game over')
+        this.phraseLettersGuessed = Array(this.phrase.length).fill(true);
+        this.defeat = true;
       }
     }
   }
@@ -82,7 +79,14 @@ export class PlaygroundComponent implements OnInit {
     }
   }
 
-  resetGame(): void{
+  prepareGame(): void {
+    this.defeat = false;
+    this.currentHangmanPicture = 0;
 
+    this.currentWordIndex = this.getCurrentWordIndex();
+    this.alreadyUsedIndexes.push(this.currentWordIndex);
+
+    this.phrase = this.stringToCharArr(this.wordList[this.currentWordIndex]);
+    this.phraseLettersGuessed = Array(this.phrase.length).fill(false);
   }
 }
