@@ -1,79 +1,53 @@
-img{
+img {
   max-height: 50vh;
+  max-width: 80vw;
 }
 
-.button-grid{
+.button-grid {
   display: flex;
   flex-direction: column;
-}
-
-.button-row{
-  display: flex;
-  flex-direction: row;
-}
-
-button{
-  text-align: center;
-  line-height: 0;
-  font-weight: bold;
-  font-size: large;
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 45px 25px;
-  font-family: 'Lato', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-  7px 7px 20px 0px rgba(0,0,0,.1),
-  4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-  background: #b621fe;
-  border: none;
-  z-index: 1;
-  &:after{
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #663dff;
-    border-radius: 5px;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
-    transition: all 0.3s ease;
-  }
-  &:hover{
-    color: #fff;
-  }
-  &:hover:after{
-    left: 0;
-    width: 100%;
-  }
-  &:active{
-    top: 2px;
-  }
-}
-.top-container{
-  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+}
+
+.button-row {
+  display: flex;
   flex-direction: row;
+  gap: 3px;
 }
-.hide{
-  visibility: hidden;
-}
-.phrase-container{
+
+.phrase-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 60px;
+  padding-bottom: 35px;
+}
+
+.top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+button{
+  padding: 28px 18px;
+  outline: none;
+  background-color: #641ae6;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #1e262c;
+  &:hover{
+    background-color: #7337e7;
+  }
+  &:active{
+    background-color: #7337e7;
+    box-shadow: 0 1px #1e262c;
+    transform: translateY(4px);
+  }
 }

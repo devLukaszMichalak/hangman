@@ -1,6 +1,8 @@
 .category-btn-container{
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  padding-top: 15px;
 }
 
 .dashboard-container{
@@ -16,4 +18,21 @@
   text-align: center;
   font-weight: bold;
   font-size: x-large;
+}
+
+button{
+  padding: 10px 50px;
+  outline: none;
+  background-color: #641ae6;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #1e262c;
+  &:hover{
+    background-color: #7337e7;
+  }
+  &:active{
+    background-color: #7337e7;
+    box-shadow: 0 1px #1e262c;
+    transform: translateY(4px);
+  }
 }
