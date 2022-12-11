@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -176,10 +176,72 @@ export class WordsProviderService {
     'dzięcioł',
     'zebra'];
 
+  private readonly states = [
+    'dolnośląskie',
+    'kujawsko-pomorskie',
+    'lubelskie',
+    'lubuskie',
+    'łódzkie',
+    'małopolskie',
+    'mazowieckie',
+    'opolskie',
+    'podkarpackie',
+    'podlaskie',
+    'pomorskie',
+    'śląskie',
+    'świętokrzyskie',
+    'warmińskomazurskie',
+    'wielkopolskie',
+    'zachodniopomorskie'];
+
+  private readonly cities = [
+    'Warszawa',
+    'Kraków',
+    'Łódź',
+    'Wrocław',
+    'Poznań',
+    'Gdańsk',
+    'Szczecin',
+    'Bydgoszcz',
+    'Lublin',
+    'Białystok',
+    'Katowice',
+    'Gdynia',
+    'Częstochowa',
+    'Radom',
+    'Sosnowiec',
+    'Toruń',
+    'Kalisz',
+    'Opatówek'];
+
+  private readonly carBrands = [
+    'Toyota',
+    'Honda',
+    'Ford',
+    'MercedesBenz',
+    'BMW',
+    'Porsche',
+    'Audi',
+    'Volkswagen',
+    'Ferrari',
+    'Volvo',
+    'Jaguar',
+    'Tesla',
+    'Mitsubishi',
+    'Fiat',
+    'AlfaRomeo',
+    'Suzuki',
+    'Renault',
+    'Citroen',
+  ];
+
   private readonly alphabet = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'R', 'S', 'Ś', 'T', 'U', 'W', 'Y', 'Z', 'Ź', 'Ż'];
 
   getVegetables = (): string[] => this.vegetables;
   getFruits = (): string[] => this.fruits;
   getAnimals = (): string[] => this.animals;
+  getStates = (): string[] => this.states;
+  getCities = (): string[] => this.cities;
+  getCarBrands = (): string[] => this.carBrands;
   getAlphabet = (): string[] => this.alphabet;
 }

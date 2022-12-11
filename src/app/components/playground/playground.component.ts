@@ -17,7 +17,7 @@ export class PlaygroundComponent implements OnInit {
   currentWordIndex?: number;
   currentHangmanPicture: number = 0;
   alphabet: string[] = [];
-  phrase: string[] = ['t', 'e', 's', 't']
+  phrase: string[] = ['T', 'E', 'S', 'T']
   defeat: boolean = false;
   phraseLettersGuessed: boolean[] = [false, false, false, false]
 
@@ -38,6 +38,15 @@ export class PlaygroundComponent implements OnInit {
       case Categories.VEGETABLES:
         this.wordList = this.provider.getVegetables();
         break;
+      case Categories.STATES:
+        this.wordList = this.provider.getStates();
+        break;
+      case Categories.CITIES:
+        this.wordList = this.provider.getCities();
+        break;
+      case Categories.CAR_BRANDS:
+        this.wordList = this.provider.getCarBrands();
+        break;
     }
     this.prepareGame();
   }
@@ -51,7 +60,7 @@ export class PlaygroundComponent implements OnInit {
 
     let didUserGuessCorrectly = false;
     this.phrase.forEach((phraseLetter, i) => {
-      if (phraseLetter === letter.toLowerCase()) {
+      if (phraseLetter === letter) {
         this.phraseLettersGuessed[i] = true;
         didUserGuessCorrectly = true;
       }
@@ -88,7 +97,7 @@ export class PlaygroundComponent implements OnInit {
     this.currentWordIndex = this.getCurrentWordIndex();
     this.alreadyUsedIndexes.push(this.currentWordIndex);
 
-    this.phrase = this.stringToCharArr(this.wordList[this.currentWordIndex]);
+    this.phrase = this.stringToCharArr(this.wordList[this.currentWordIndex].toUpperCase());
     this.phraseLettersGuessed = Array(this.phrase.length).fill(false);
   }
 }
