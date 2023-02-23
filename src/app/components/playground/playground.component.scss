@@ -17,6 +17,12 @@ img {
   gap: 3px;
 }
 
+.phrase-centerer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .phrase-container {
   display: flex;
   flex-direction: row;
@@ -24,6 +30,7 @@ img {
   align-items: center;
   font-size: 55px;
   padding-bottom: 30px;
+  width: 80%;
 }
 
 .top-container {
