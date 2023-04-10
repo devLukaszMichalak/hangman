@@ -178,7 +178,7 @@ export class WordsProviderService {
 
   private readonly states = [
     'dolnośląskie',
-    'kujawsko-pomorskie',
+    'kujawskopomorskie',
     'lubelskie',
     'lubuskie',
     'łódzkie',
